@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navigation">
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <a href="#contacts" class="navigation-link">Contacts</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#about" class="navigation-link">About Me</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#skills" class="navigation-link">Skills</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#education" class="navigation-link">Education</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#projects" class="navigation-link">Projects</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#languages" class="navigation-link">Languages</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <div class="container container-for-section">
+        <section class="left-section">
+            <div class="avatar">
+                <h1>Alexey Anisimov</h1>
+                <p class="text-about">Full-stack developer</p>
+            </div>
+            <div class="contacts" id="contacts">
+                <h2>Contact information:</h2>
+                <ul>
+                    <li>
+                        <a href="https://maps.app.goo.gl/qAfyTBwkvu8Tabui6">Location: Belarus, Vitebsk</a>
+                    </li>
+                    <li>
+                        <span>Phone:</span>
+                        <a href="tel:+375298151050">+375298151050</a>
+                    </li>
+                    <li>
+                        <span>E-mail:</span>
+                        <a href="mailto:alexez0@mail.ru">Alexez0@mail.ru</a>
+                    </li>
+                    <li>
+                        <span>GitHub:</span>
+                        <a href="https://github.com/Alexez0">Alexez0</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="skills" id="skills">
+                <h2>Skills and Proficiency:</h2>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3, SASS(SCSS)</li>
+                    <li>JavaScript</li>
+                    <li>Vue 3</li>
+                    <li>Vuex</li>
+                    <li>Node js</li>
+                    <li>Express js</li>
+                    <li>Git, GitHub</li>
+                    <li>Figma</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="right-section">
+            <div class="about" id="about">
+                <h2>About Me:</h2>
+                <p>I am 22 years old and I am a beginner full-stack developer.My stack is Vue 3(Vuex) + Node js(Express js)  Currently, I am studying in the 4th year at Vitebsk State Technological University. I love to play volleyball, sometimes I play table tennis. I love listening to music and watching serials.</p>
+                <div class="border"></div>
+            </div>
+            <div class="education" id="education">
+                <h2>Education:</h2>
+                <a target="_blank" href="https://www.vstu.by/">University: Vitebsk State Technological University, Informational systems and technologies </a>
+                <div class="border"></div>
+            </div>
+
+            <div class="projects" id="projects">
+                <h2>Projects:</h2>
+                <ul>
+                    <li>
+                        <a target="_blank" href=" https://alexez0.github.io/online-zoo/online-zoo/main/index.html">Online zoo</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://alexez0.github.io/Travel/">Travel</a>
+                    </li>
+                </ul>
+                <div class="border"></div>
+            </div>
+
+            <div class="languages" id="languages">
+                <h2>Languages:</h2>
+                <ul>
+                    <li>English - A2-B1(Pre-Intermediate)</li>
+                    <li>Russian - Native</li>
+                    <li>Belarusian - Native</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</main>
+<footer class="footer">
+    <div class="year-of-created">
+        <h3>© 2023 by Alexey Anisimov</h3>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.navigation-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            let id = this.getAttribute('href').slice(1);
+            let section = document.getElementById(id);
+            if (section) {
+                section.style.boxShadow = '0 0 10px red';
+                setTimeout(function() {
+                    section.style.boxShadow = '';
+                }, 1000);
+            }
+        });
+    });
+    document.querySelector('.burger-menu').addEventListener('click', function() {
+        document.querySelector('.navigation').classList.toggle('show');
+    });
+
+    const navLinks = document.querySelectorAll('.navigation-link');
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.querySelector('.navigation').classList.remove('show');
+        });
+    });
+</script>
+</body>
+</html>
