@@ -24,6 +24,8 @@ a:hover {
     color: #e3c4c4;
 }
 
+
+
 pre {
     margin: 0;
 }
@@ -105,9 +107,37 @@ body {
 }
 
 
+
 .year-of-created > h3 {
     margin: 0;
 }
+
+.projects ul li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.projects ul li::after {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: darkred;
+    font-size: 20px;
+    animation: moveArrow 1.5s infinite;
+}
+
+@keyframes moveArrow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 @keyframes slideInFromLeft {
     0% {
