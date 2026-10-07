@@ -23,7 +23,10 @@ a {
 a:hover {
     color: #e3c4c4;
 }
-
+.tg:hover {
+    transition: 0.3s;
+    color: #e3c4c4
+}
 
 
 pre {
